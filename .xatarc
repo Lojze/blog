@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Mai-Da-s-workspace-lgaksp.us-east-1.xata.sh/db/aiIdeas",
+  "codegen": {
+    "output": "src/lib/xata.codegen.server.ts"
+  }
+}

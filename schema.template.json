@@ -1,0 +1,14 @@
+{
+  "tables": [
+    {
+      "name": "historyRecord",
+      "columns": [
+        { "name": "title", "type": "string" },
+        { "name": "question", "type": "text" },
+        { "name": "association", "type": "string" },
+        { "name": "description", "type": "string" },
+        { "name": "createTime", "type": "datetime" }
+      ]
+    }
+  ]
+}

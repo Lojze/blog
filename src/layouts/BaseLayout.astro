@@ -12,16 +12,20 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="这是页面的描述">
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
   <body>
     <Header />
-    <h1 >{pageTitle}</h1>
-    <slot />
-    <Footer />
+    <main class="flex flex-col min-h-screen mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <h1>{pageTitle}</h1>
+      <slot />
+      <Footer />
+    </main>
     <script>
       import "../scripts/menu.js";
     </script>
   </body>
 </html>
+
