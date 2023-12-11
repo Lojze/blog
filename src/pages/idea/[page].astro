@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { xata } from '../../lib/xata'
+export const prerender = true;
+
+export async function getStaticPaths({ paginate }) {
+  const astronautPages = await  xata.db.historyRecord.sort('createTime','desc').select([ "id", "title", "question", "association", "description", "createTime"]).getAll();
+  // 根据宇航员数组生成页面，每页2项
+  return paginate(astronautPages, { pageSize: 10 });
+}
+// 所有分页数据都在 "page" 参数中传递
+const { page } = Astro.props;
+const pageTitle = "good idea"
+---
+
+<!-- 显示当前页面。也可以使用 Astro.params.page！-->
+<!-- <h1>Page {page.currentPage}</h1> -->
+
+<BaseLayout pageTitle={pageTitle}>
+	<main class="mx-auto max-w-screen-xl">
+		<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 md:p-6">
+			{page.data.map((item) => (
+				<div class="rounded-lg border bg-white text-black shadow-sm p-6 space-y-4">
+					<!-- 
+					<h3 class="text-2xl font-semibold">{item.title}</h3>
+					-->
+					<div class="rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-black text-white">
+						{item.createTime instanceof Date ? item.createTime.toLocaleString() : item.createTime}
+					</div>
+					<p class="text-sm">
+						{item.description}
+					</p>
+					<!-- 
+					<button class="inline-flex items-center justify-center text-sm font-medium border border-gray-300 bg-white hover:bg-black hover:text-white h-9 rounded-md px-3">
+						View details
+					</button>
+					-->
+				</div>
+			))}
+		</section>
+		<div class="flex justify-end">
+        {page.url.prev ? 
+                <a href={page.url.prev} class="px-4 mr-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Previous</a> 
+                : <span class="px-4 mr-2 py-2 bg-gray-200 text-gray-500 rounded cursor-not-allowed">Previous</span>}
+            {page.url.next ? 
+                <a href={page.url.next} class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Next</a> 
+                : <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded cursor-not-allowed">Next</span>}
+        </div>
+	</main>
+</BaseLayout>

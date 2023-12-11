@@ -5,7 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  // output: 'server',
   // site: "https://example.com"
-  site: "http://10.181.16.47:4321/",
+  site: "https://lojzebolg.deno.dev/",
   integrations: [preact(), tailwind()]
 });
