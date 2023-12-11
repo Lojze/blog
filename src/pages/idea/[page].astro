@@ -9,7 +9,9 @@ export async function getStaticPaths({ paginate }) {
   return paginate(astronautPages, { pageSize: 10 });
 }
 // 所有分页数据都在 "page" 参数中传递
-const { page } = Astro.props;
+let { page } = Astro.props;
+let pages: { data: any[], url: { prev?: string, next?: string } } = page
+
 const pageTitle = "good idea"
 ---
 
@@ -19,7 +21,7 @@ const pageTitle = "good idea"
 <BaseLayout pageTitle={pageTitle}>
 	<main class="mx-auto max-w-screen-xl">
 		<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 md:p-6">
-			{page.data.map((item) => (
+			{pages.data.map((item) => (
 				<div class="rounded-lg border bg-white text-black shadow-sm p-6 space-y-4">
 					<!-- 
 					<h3 class="text-2xl font-semibold">{item.title}</h3>
@@ -39,11 +41,11 @@ const pageTitle = "good idea"
 			))}
 		</section>
 		<div class="flex justify-end">
-        {page.url.prev ? 
-                <a href={page.url.prev} class="px-4 mr-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Previous</a> 
+        {pages.url.prev ? 
+                <a href={pages.url.prev} class="px-4 mr-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Previous</a> 
                 : <span class="px-4 mr-2 py-2 bg-gray-200 text-gray-500 rounded cursor-not-allowed">Previous</span>}
-            {page.url.next ? 
-                <a href={page.url.next} class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Next</a> 
+            {pages.url.next ? 
+                <a href={pages.url.next} class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Next</a> 
                 : <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded cursor-not-allowed">Next</span>}
         </div>
 	</main>
