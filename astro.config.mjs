@@ -9,4 +9,7 @@ export default defineConfig({
   // site: "https://example.com"
   site: "https://lojzebolg.deno.dev/",
   integrations: [preact(), tailwind()],
+  redirects: {
+    "/ideads":"/idea/1"
+  }
 });
