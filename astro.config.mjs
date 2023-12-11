@@ -9,6 +9,4 @@ export default defineConfig({
   // site: "https://example.com"
   site: "https://lojzebolg.deno.dev/",
   integrations: [preact(), tailwind()],
-  output: "server",
-  adapter: deno()
 });
