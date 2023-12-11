@@ -31,4 +31,4 @@ jobs:
         with:
           project: lojzebolg
           entrypoint: server/entry.mjs # 📝 Update the entrypoint if necessary
-          root: "dist" # 📝 Update the root if necessary
+          root: dist # 📝 Update the root if necessary
