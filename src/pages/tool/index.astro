@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+let product = {
+  image: "https://via.placeholder.com/150",
+  name: "Test: Random User Information",
+  description: "Explore the Boundaries of Creativity with Random User Profiles.",
+  time: "2023-12-12",
+  url: "/tool/randomUser"
+};
+
+const pageTitle = "AI-Generated User Information: Explore Random Profiles";
+const description = "Experience the intrigue of randomly generated user profiles crafted by artificial intelligence. Dive into a fascinating array of dynamically created personas, each a unique blend of data and creativity. Discover the possibilities of AI-driven identity synthesis on this thought-provoking platform.";
+---
+<BaseLayout pageTitle={pageTitle} description={description}>
+    <ul class="flex flex-wrap justify-around p-4">
+      <li class="max-w-sm rounded overflow-hidden shadow-lg m-4 cursor-pointer">
+        <a href={product.url}>
+            <img class="w-full" src={product.image} alt="Product image">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">{product.name}</div>
+              <p class="text-gray-700 text-base">{product.description}</p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Posted on {product.time}</span>
+            </div>
+        </a>
+      </li>
+    </ul>
+</BaseLayout>

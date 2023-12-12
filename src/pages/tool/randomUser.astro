@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RandomUser from '../../components/tools/RandomUser.jsx';
+const pageTitle = "Test: Random User Information";
+const description = "Explore the Boundaries of Creativity with Random User Profiles.";
+---
+<BaseLayout pageTitle={pageTitle} description={description}>
+  <RandomUser client:load />
+</BaseLayout>
