@@ -13,12 +13,13 @@ let { page } = Astro.props;
 let pages: { data: any[], url: { prev?: string, next?: string } } = page
 
 const pageTitle = "good idea"
+const description = "Explore a curated collection of creatively generated ideas powered by AI. Immerse yourself in a world of innovative concepts and imaginative inspirations, where artificial intelligence meets boundless creativity. Unleash your own creativity by delving into this thought-provoking assortment that pushes the boundaries of imagination."
 ---
 
 <!-- 显示当前页面。也可以使用 Astro.params.page！-->
 <!-- <h1>Page {page.currentPage}</h1> -->
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
 	<main class="mx-auto max-w-screen-xl">
 		<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 md:p-6">
 			{pages.data.map((item) => (

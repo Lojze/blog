@@ -6,10 +6,10 @@ author: "Astro Learner"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The Astro logo with the word One."
-tags: ["astro", "blogging", "learning in public"]
+tags: ["astro", "blogging", "Interesting"]
 ---
 
-# 有意思的站点1
+# 有意思的站点
 
 1:[IdeasAI](https://ideasai.net/)
 

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
+const description = "This is the home page description";
 const happy = true;
 const finished = true;
 const goal = 3;
@@ -32,7 +33,7 @@ const textCase = "uppercase";
   }
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
   <h2>... and my new Astro site!</h2>
 
   <p>
