@@ -9,4 +9,8 @@ pubDate: 2022-07-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
 
-After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+[Unsplash](https://unsplash.com/)
+[nappy](https://nappy.co/)
+[The Gender Spectrum Collection](https://genderphotos.vice.com/)
+
+> 三个为文章添加一些精美的背景图可以让文章看起来更加的精致。
