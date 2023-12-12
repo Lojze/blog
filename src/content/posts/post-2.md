@@ -14,3 +14,7 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 [The Gender Spectrum Collection](https://genderphotos.vice.com/)
 
 > 三个为文章添加一些精美的背景图可以让文章看起来更加的精致。
+
+[写作平台](https://medium.com/)
+
+> 一个写作平台
