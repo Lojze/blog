@@ -18,3 +18,5 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 [写作平台](https://medium.com/)
 
 > 一个写作平台
+
+[矢量图](https://www.flaticon.com/search?word=Beach)
