@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   // site: "https://example.com"
-  site: "https://lojzebolg.deno.dev",
+  site: "https://blog.ideatoolhub.com/",
   // import.meta.url
   integrations: [preact(), tailwind(), sitemap()]
 });
