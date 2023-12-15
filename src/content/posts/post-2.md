@@ -24,3 +24,5 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 [大模型训练平台可以放置模型](https://huggingface.co/spaces?sort=trending)
 
 [HackerNews](https://github.com/HackerNews/API?tab=readme-ov-file)
+
+[google收录](https://search.google.com/search-console)
