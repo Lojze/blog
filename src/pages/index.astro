@@ -3,8 +3,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting.jsx';
 const pageTitle = "Home Page";
 const description = "This is the ai idea";
+import { Image } from 'astro:assets';
+
+import myImportedImage from './images/i/0.png'
+import myImportedImage1 from './images/i/1.png'
+import myImportedImage2 from './images/i/2.png'
+import myImportedImage3 from './images/i/3.png'
+import myImportedImage4 from './images/i/4.png'
+import myImportedImage5 from './images/i/5.png'
+import myImportedImage6 from './images/i/6.png'
+import myImportedImage7 from './images/i/7.png'
+import myImportedImage8 from './images/i/8.png'
+import myImportedImage9 from './images/i/9.png'
+import myImportedImage10 from './images/i/10.png'
+import myImportedImage11 from './images/i/11.png'
+import myImportedImage12 from './images/i/12.png'
+import myImportedImage13 from './images/i/13.png'
+import myImportedImage14 from './images/i/14.png'
+import myImportedImage15 from './images/i/15.png'
+import myImportedImage16 from './images/i/16.png'
+import myImportedImage17 from './images/i/17.png'
+import myImportedImage18 from './images/i/18.png'
+const games = [
+  {image:myImportedImage,name:"Squiggle Golf",description:"Squiggle Golf 是一款免费的 2D 迷你高尔夫游戏，具有手绘、粗略的图形风格，您可以在这里玩 在你的 网页浏览器。通过随机生成的每日课程、一套预制课程（即将推出）和自定义关卡编辑器（即将推出），总有一个 新的挑战在 Squiggle Golf 等着你！",link:"https://squigglegolf.com/"},
+  {image:myImportedImage2,name:"inside",description:"杰作！里面是一个 2D 解谜平台游戏，可以构建 建立在《地狱边境》伟大的基础之上，事实上，它正在构建更伟大的东西。",link:"https://playdead.com/games/inside/"},
+  {image:myImportedImage3,name:"短途旅行",description:"一幅手绘的、互动的插画，描绘了有轨电车司机、群山、披着斗篷的猫，以及所有这些之间的场景。",link:"https://alexanderperrin.com.au/paper/shorttrip/"},
+  {image:myImportedImage4,name:"Sandspiel",description:"《Sandspiel》是一款沙子掉落游戏，为玩家提供一个轻松创意的场所，可以使用沙子、水、植物和火等元素进行玩耍。在手机、平板电脑或计算机上畅玩，并与朋友分享你的创作！",link:"https://sandspiel.club/"},
+  {image:myImportedImage5,name:"Bellwoods",description:"一款适用于手机和桌面的艺术游戏。驾驭风筝穿越无尽的色彩和声音之境，尝试探索新的世界。",link:"https://bellwoods.xyz/"},
+  {image:myImportedImage6,name:"Wayfinder",description:"一场诗意而富有动画探索的游戏，横越大地。",link:"https://wayfinder.nfb.ca/"},
+  {image:myImportedImage7,name:"每天都做同一个梦",description:"一款关于异化和拒绝劳动的游戏。",link:"https://www.molleindustria.org/everydaythesamedream/everydaythesamedream.html"},
+  {image:myImportedImage8,name:"slowroads",description:"无尽的驾驶禅意，尽在您的浏览器中。",link:"https://slowroads.io/"},
+  {image:myImportedImage9,name:"Townscaper",description:"Townscaper是一款富有创意和放松氛围的建造游戏，适合喜欢建筑和创造的玩家。",link:"https://oskarstalberg.com/Townscaper/"},
+  {image:myImportedImage10,name:"Danger Crew",description:"Danger Crew 是一款以编程和黑客世界为背景的经典单人角色扮演游戏。这是您作为首席工程师在五星皮带公司工作的第一天，五星皮带公司是克莱顿市有史以来最优秀的工匠皮带公司。自从与邪恶供应商的会面被列入日历以来，谣言就一直在传播。公司可能面临危险。",link:"https://thedangercrew.com/"},
+  {image:myImportedImage11,name:"Entanglement - by Gopherwood Studios",description:"迷宫游戏，赢得《Entanglement》游戏。",link:"https://entanglement.gopherwoodstudios.com/en-GB-index.html"},
+  {image:myImportedImage12,name:"ZType – Typing Game - Type to Shoot",description:"一个真正有趣的打字游戏。",link:"https://zty.pe/"},
+  {image:myImportedImage13,name:"屋顶狂奔",description:"玩家控制一名无名男子逃离未知威胁。游戏开始时，玩家角色从办公楼的窗户跳到邻近建筑物的屋顶上。然后他自动向前跑，并在移动过程中不断加速。玩家对角色的唯一控制是通过一个按钮，这会让他跳跃；无论是从建筑物到建筑物还是越过障碍物。错过跳到另一栋建筑物会导致他摔死，而与板条箱或办公椅相撞会降低他的速度。炸弹有时也会落入玩家的路径中，如果不避免的话会导致死亡。",link:"https://adamatomic.com/canabalt/"},
+  {image:myImportedImage14,name:"和零人",description:"Zerosuit 赋予其佩戴者刀枪不入的能力（虽然不是完全，特别是在太阳神经丛等编织较薄的区域）、飞行（带着“出去，出去，离开！”的喊声飞向空中，显然是通过一种超肠胃气胀）、超人的力量和各种其他能力，包括射出粘性胶水般的超级粘液当他的过敏症变得特别严重时，就像在“加湿器”一集中一样，他的鼻子。但是，尽管该套装赋予使用者令人难以置信的力量，但该套装仍然容易受到防静电片的影响。当受到它们的影响时，套装穿着者会丧失行为能力、残疾，并且当套装开始无法控制地膨胀时会承受巨大的痛苦。",link:"https://zeroman.space/"},
+  {image:myImportedImage15,name:"我怎么会忘记礼堂呢？",description:"经典粒子益智游戏",link:"https://store.steampowered.com/app/205870/Auditorium/"},
+  {image:myImportedImage16,name:"Blitt TD - 塔防游戏",description:"经典的塔防游戏。",link:"https://shotty.itch.io/blitt-td"},
+  {image:myImportedImage17,name:"flOw",description:"视频游戏",link:"https://en.wikipedia.org/wiki/Flow_(video_game)"},
+  {image:myImportedImage18,name:"远星物语",description:"《远星物语》是一款由Radical Fish Games开发、Deck13发行的2D动作角色扮演游。",link:"https://store.steampowered.com/app/368340/CrossCode/"},
+];
 ---
 <BaseLayout pageTitle={pageTitle} description={description}>
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+  <!-- <h2>My awesome blog subtitle</h2> -->
+  <!-- <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} /> -->
+  <div class="container mx-auto mt-8">
+    <h1 class="text-4xl font-bold mb-8">最漂亮的网页游戏</h1>
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {games.map((game, index) => (
+        <li key={index} class="bg-white p-4 rounded-lg shadow-md">
+          <Image class="mb-4 object-cover h-48 w-full rounded-md" src={game.image} alt={game.name} />
+          <h2 class="text-xl font-bold mb-2">{game.name}</h2>
+          <p class="text-gray-600 mb-4">{game.description}</p>
+
+          <div class="px-6 pt-4 pb-2">
+            <a href={game.link} class="text-blue-500 hover:underline">Play Now</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
 </BaseLayout>
