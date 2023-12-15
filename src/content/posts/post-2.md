@@ -20,3 +20,7 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 > 一个写作平台
 
 [矢量图](https://www.flaticon.com/search?word=Beach)
+
+[大模型训练平台可以放置模型](https://huggingface.co/spaces?sort=trending)
+
+[HackerNews](https://github.com/HackerNews/API?tab=readme-ov-file)

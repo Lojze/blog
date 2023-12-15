@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting.jsx';
 const pageTitle = "最漂亮的网页游戏";
 const description = "《最漂亮的网页游戏》是一场令人陶醉的视觉盛宴，汇集了各种精美的游戏作品。每款游戏都以精致的设计和华丽的画面为特色，带给玩家一场无与伦比的美学体验。在这里，你将领略到游戏与艺术的完美融合，每一帧都是一幅精心打磨的艺术品。探索这个汇聚了美感和创意的游戏世界，感受游戏之美，沉浸在精心构建的视觉盛宴中。";
 import { Image } from 'astro:assets';
@@ -51,7 +50,7 @@ const games = [
     <h1 class="text-4xl font-bold mb-8">最漂亮的网页游戏</h1>
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {games.map((game, index) => (
-        <li key={index} class="bg-white p-4 rounded-lg shadow-md">
+        <li class="bg-white p-4 rounded-lg shadow-md">
           <Image class="mb-4 object-cover h-48 w-full rounded-md" src={game.image} alt={game.name} />
           <h2 class="text-xl font-bold mb-2">{game.name}</h2>
           <p class="text-gray-600 mb-4">{game.description}</p>
