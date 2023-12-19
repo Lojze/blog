@@ -20,6 +20,9 @@ export async function getStaticPaths({ paginate }) {
       return "翻译失败";
     }
     const result = await response.json();
+    if (!result.translation.error) {
+      return "翻译失败";
+    }
     return result.translation[0].translation_text;
   }
 
