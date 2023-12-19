@@ -17,11 +17,11 @@ export async function getStaticPaths({ paginate }) {
       }
     );
     if (!response.ok) {
-      return "翻译失败";
+      return "";
     }
     const result = await response.json();
-    if (!result.translation.error) {
-      return "翻译失败";
+    if (result.translation.error) {
+      return "";
     }
     return result.translation[0].translation_text;
   }
