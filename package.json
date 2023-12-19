@@ -19,7 +19,6 @@
     "@xata.io/cli": "^0.15.0",
     "@xata.io/client": "^0.28.0",
     "astro": "^3.1.4",
-    "md5": "^2.3.0",
     "preact": "^10.6.5",
     "tailwindcss": "^3.0.24",
     "typescript": "^5.3.3"
